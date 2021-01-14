@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.max-container{
+  max-width: 600px;
+}
+
+.input-add{
+  margin-top: 10px;
+  width: 600px;
+}
+
+.tr-size{
+  width: 600px !important;
+}
+
+.bg.light{ 
+  background-image: url(./image/abstract-blue-geometric-shapes-background_1035-17545.jpg)
+}
