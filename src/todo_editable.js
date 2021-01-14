@@ -30,13 +30,7 @@ const TodoEditable = () => {
         setNombre('')
 
     }
-    const deleteTask = (item) => {
-        const borrarTarea = prueba.filter((tarea) => {
-            return tarea !== item
-        })
-        setPrueba(borrarTarea)
-    }
-    
+
 
     return (
         <>
@@ -59,7 +53,7 @@ const TodoEditable = () => {
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
                                             <p>Asignado a {item.name} , Tarea a Realizar {item.task}</p>
                                             <button type="button" className="btn btn-danger" onClick={() => { deleteTask(item) }}>Borrar</button>
-                                            <button type="button" className="btn btn-success" onClick={()=>{editTask(item.task)}}>Editar</button>
+                                            <button type="button" className="btn btn-success" >Editar</button>
                                         </li>
                                     </ul>
                                 )
