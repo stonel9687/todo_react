@@ -4,7 +4,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale
 }
 
 code {
@@ -25,6 +25,15 @@ code {
   width: 600px !important;
 }
 
-.bg.light{ 
-  background-image: url(./image/abstract-blue-geometric-shapes-background_1035-17545.jpg)
+.font-white{
+  color:white
+}
+
+.bg-white{
+  background-color: white;
+}
+
+.h-150{
+  height: 100px;
+  width: 100px;
 }
