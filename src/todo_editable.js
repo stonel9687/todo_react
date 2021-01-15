@@ -68,7 +68,6 @@ const TodoEditable = () => {
     }
     return (
         <>
-
             <div className='container'>
                 <h1 className='font-white'>TO DO LIST</h1>
                 <div className="table table-striped ">
