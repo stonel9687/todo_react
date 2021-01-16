@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import TodoEditable from './todo_editable'
+import TodoModular from './todo_modular'
 
 
 const Layout = () => {
@@ -7,7 +8,7 @@ const Layout = () => {
 
     return (
         <>
-                <TodoEditable />
+           <TodoModular/>
             
         </>
     )
