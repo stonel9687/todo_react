@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
 const TodoEditable = () => {
+    const history = useHistory()
 
     const [nombre, setNombre] = useState('')
     const [tarea, setTarea] = useState('')
@@ -68,6 +70,7 @@ const TodoEditable = () => {
     }
     return (
         <>
+
             <div className='container'>
                 <h1 className='font-white'>TO DO LIST</h1>
                 <div className="table table-striped ">
@@ -86,13 +89,16 @@ const TodoEditable = () => {
                                         <li class="list-group-item d-flex justify-content-between align-items-center">
                                             <p>Asignado a {item.name} , Tarea a Realizar {item.task}</p>
                                             <button type="button" className="btn btn-danger" onClick={() => { deleteTask(item) }}>Borrar</button>
-                                            <button type="button" className="btn btn-success" onClick={() => setEditTask(item) }>Editar</button>
+                                            <button type="button" className="btn btn-success" onClick={() => setEditTask(item)}>Editar</button>
 
                                         </li>
                                     </ul>
                                 )
                             })}
                         </div>
+                        <Link to='/'>
+                            <button type="button" className="btn btn-dark" >Volver</button>
+                        </Link>
                     </div>
                 </div>
             </div>

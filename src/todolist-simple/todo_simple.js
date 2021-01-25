@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const TodoSimple = () => {
 
@@ -39,7 +40,7 @@ const TodoSimple = () => {
                     <div className='input-add'>
                         <div className="input-group mb-3">
                             <form onSubmit={addTask}>
-                                <input required type="text" className="form-control " placeholder="Recipient's username" aria-label="Recipient's username" onChange={handleChange} value={tarea} />
+                                <input required type="text" className="form-control " placeholder="Task" aria-label="Recipient's username" onChange={handleChange} value={tarea} />
                                 <button className="btn btn-primary">Primary</button>
                             </form>
                         </div>
@@ -55,6 +56,9 @@ const TodoSimple = () => {
                                 )
                             })}
                         </div>
+                        <Link to='/'>
+                            <button type="button" className="btn btn-dark" >Volver</button>
+                        </Link>
                     </div>
                 </div>
             </div>
