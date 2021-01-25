@@ -25,7 +25,7 @@ const Home = () => {
               </button>
                 </Link>
 
-                <Link to='/todolist-modular/indexm' className='w-100'>
+                <Link to='/todolist-contextApi/index' className='w-100'>
                     <button class="btn btn-warning my-2 w-100">
                         TodoList ContexApi & useHistory
               </button>

@@ -20,12 +20,12 @@ const getState = ({ getStore, setStore, getActions }) => {
             assignment: (e) => {
                 e.preventDefault()
                 const store = getStore()
-                if (edit) {
+                if (store.setEdit) {
                     const store = getStore()
-                    const newTasklist = taskList.map((item) => {
-                        if (item.id === currentTask.id) {
+                    const newTasklist = store.taskList.map((item) => {
+                        if (item.id === store.currentTask.id) {
                             const newTask = {
-                                id: currentTask.id,
+                                id: store.currentTask.id,
                                 name: store.nombre,
                                 task: store.tarea,
                                 date: store.currentTask.date
@@ -49,8 +49,8 @@ const getState = ({ getStore, setStore, getActions }) => {
                     console.log(fecha)
                     const newTask = {
                         id: id,
-                        name: nombre,
-                        task: tarea,
+                        name: store.nombre,
+                        task: store.tarea,
                         date: fecha.toString()
                     }
 
@@ -69,7 +69,7 @@ const getState = ({ getStore, setStore, getActions }) => {
                         return tarea.id !== item.id
                     })
                     setStore({
-                        taskList: borrarTarea
+                        taskList: borrarTrabajo
                     })
                 } else {
                     const borrarTarea = store.taskList.filter((tarea) => {
@@ -94,16 +94,16 @@ const getState = ({ getStore, setStore, getActions }) => {
 
             changelist: (item, isChange) => {
                 const store = getStore()
+                const actions=getActions()
                 if (isChange === true) {
-                    deleteTask(item, true)
+                    actions.deleteTask(item, true)
                     const returnTask = store.taskList.concat(item)
                     setStore({
                         taskList:returnTask
                     })
-
                 } else {
-                    deleteTask(item, false)
-                    const newdone = workDone.concat(item)
+                    actions.deleteTask(item, false)
+                    const newdone = store.workDone.concat(item)
                     setStore({
                         workDone:newdone
                     })
