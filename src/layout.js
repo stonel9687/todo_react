@@ -5,6 +5,7 @@ import TodoEditable from './todolist-editable/todo_editable'
 import TodoModular from './todolist-modular/indexm'
 import TodoSimple from './todolist-simple/todo_simple'
 import TodoContext from './todolist-contextApi/index'
+import TodoModularFetch from './todolist-fetch/indexmf'
 import injectContext from './store/appContex'
 
 const Layout = () => {
@@ -24,6 +25,9 @@ const Layout = () => {
             </Route>
             <Route path='/todolist-contextApi'>
                 <TodoContext />
+            </Route>
+            <Route path='/todolist-fetch'>
+                <TodoModularFetch />
             </Route>
         </Switch>
     )

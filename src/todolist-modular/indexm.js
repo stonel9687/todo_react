@@ -54,7 +54,6 @@ const TodoModular = () => {
                 task: tarea,
                 date: fecha.toString()
             }
-
             const todolist = prueba.concat(newTask)
             setPrueba(todolist)
             setTarea('')
