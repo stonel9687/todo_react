@@ -26,8 +26,8 @@ const Lista = () => {
                                             </li>
                                         </ul>
                                         <button type="button" class="btn btn-danger" onClick={() => { actions.deleteTask(item, false) }}>Delete</button>
-                                        <button type="button" class="btn btn-primary" onClick={() => actions.setEditTask(item)}>Edit</button>
-                                        <button type="button" class="btn btn-success" onClick={() => { actions.changelist(item, false) }}>Done</button>
+                                        <button type="button" class="btn btn-primary" onClick={() => {actions.setEditTask(item)}}>Edit</button>
+                                        <button type="button" class="btn btn-success" onClick={() =>  {actions.changelist(item, false)} }>Done</button>
                                     </p>
                                     <hr></hr>
                                 </div>
@@ -37,7 +37,7 @@ const Lista = () => {
                 </div>
                 <div className="card bg-light mb-3" style={{ width: '18rem' }}>
                     <div className="card-header">Hecho</div>
-                    {store.workDone.map((item) => {
+                    {store.workDone.map((item => {
                         return (
                             <div className="card-body">
                                 <p className="card-text">
@@ -57,7 +57,7 @@ const Lista = () => {
                                 </p>
                             </div>
                         )
-                    })}
+                    }))}
                 </div>
             </div>
             <Link to='/'>

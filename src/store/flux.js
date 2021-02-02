@@ -81,7 +81,6 @@ const getState = ({ getStore, setStore, getActions }) => {
                 }
             },
 
-
             setEditTask: (task) => {
                 const store = getStore()
                 setStore({
@@ -108,7 +107,6 @@ const getState = ({ getStore, setStore, getActions }) => {
                         workDone:newdone
                     })
                 }
-
             }
         }
     }

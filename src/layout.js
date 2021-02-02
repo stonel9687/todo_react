@@ -2,9 +2,9 @@ import React from 'react'
 import { Switch, Route } from "react-router-dom"
 import Home from './home'
 import TodoEditable from './todolist-editable/todo_editable'
-import TodoModular from './todolist-modular/indexm'
+import TodoModular from './todolist-modular/index'
 import TodoSimple from './todolist-simple/todo_simple'
-import TodoContext from './todolist-contextApi/index'
+import TodoContext from './todolist-usehistory/indexm'
 import TodoModularFetch from './todolist-fetch/indexmf'
 import injectContext from './store/appContex'
 
@@ -23,7 +23,7 @@ const Layout = () => {
             <Route path='/todolist-modular'>
                 <TodoModular />
             </Route>
-            <Route path='/todolist-contextApi'>
+            <Route path='/todolist-usehistory'>
                 <TodoContext />
             </Route>
             <Route path='/todolist-fetch'>

@@ -18,14 +18,12 @@ const ListModular = (props) => {
                                         <ul className="list-group">
                                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                                 Nombre:{item.name}
-
                                             </li>
                                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                                 tarea: {item.task}
                                             </li>
                                             <li className="list-group-item d-flex justify-content-between align-items-center">
                                                 Fecha: {item.date}
-
                                             </li>
                                         </ul>
                                         <button type="button" class="btn btn-danger" onClick={() => { deleteTask(item, false) }}>Delete</button>
@@ -66,6 +64,9 @@ const ListModular = (props) => {
                 </div>
 
             </div>
+            <Link to='/todolist-usehistory/todolist-task'>
+                <button type="button" className="btn btn-primary btn-lg btn-block" >Agregar Nueva Tarea</button>
+            </Link>
             <Link to='/'>
                 <button type="button" className="btn btn-secondary btn-lg btn-block" >Volver</button>
             </Link>

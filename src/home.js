@@ -14,16 +14,15 @@ const Home = () => {
                     <button className="btn btn-primary my-2 w-100">
                         TodoList Editable</button>
                 </Link>
-                <Link to='/todolist-modular/indexm' className='w-100'>
-                    <button class="btn btn-secondary my-2 w-100">
-                        TodoList Modular</button>
-                </Link>
-
-                <Link to='/todolist-contextApi/index' className='w-100'>
+                <Link to='/todolist-usehistory/todolist-task' className='w-100'>
                     <button class="btn btn-warning my-2 w-100">
-                        TodoList ContexApi & useHistory</button>
+                        TodoList useHistory</button>
                 </Link>
-                <Link to='/todolist-fetch/Tasklist' className='w-100'>
+                <Link to='/todolist-modular/todolist-task' className='w-100'>
+                    <button class="btn btn-secondary my-2 w-100">
+                        TodoList Modular & ContexApi</button>
+                </Link>
+                <Link to='/todolist-fetch/Login' className='w-100'>
                     <button class="btn btn-warning my-2 w-100">
                         TodoList modular fetch</button>
                 </Link>

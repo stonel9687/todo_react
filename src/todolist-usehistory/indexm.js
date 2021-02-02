@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom"
+import { Link, Route, Switch, useHistory } from "react-router-dom"
 import ListModular from './todolist-name'
 import Task from './todolist-task'
 
 
 const TodoModular = () => {
-    
+
     const history = useHistory()
 
     const [nombre, setNombre] = useState('')
@@ -60,7 +60,7 @@ const TodoModular = () => {
             setNombre('')
 
         }
-        history.push('/todolist-modular/todolist-task')
+        history.push('/todolist-usehistory/todolist-name')
     }
     const deleteTask = (item, isDone) => {
         if (isDone === true) {
@@ -84,7 +84,7 @@ const TodoModular = () => {
         setTarea(task.task)
         setEdit(true)
         setCurrentTask(task)
-        history.push('/todolist-modular/todolist-name')
+        history.push('/todolist-usehistory/todolist-task')
 
     }
 
@@ -103,23 +103,31 @@ const TodoModular = () => {
     }
     return (
         <>
-            <Task
-                nombre={nombre}
-                tarea={tarea}
-                assignment={assignment}
-                handleName={handleName}
-                handleTask={handleTask}
-            />
-
-            <ListModular
-                prueba={prueba}
-                deleteTask={deleteTask}
-                setEditTask={setEditTask}
-                changelist={changelist}
-                workDone={workDone}
-                changelist={changelist}
-                deleteTask={deleteTask}
-            />
+            <Link to='/'>
+                <button type="button" className="btn btn-secondary mb-3">Back to home</button>
+            </Link>
+            <Switch>
+                <Route path='/todolist-usehistory/todolist-name'>
+                    <ListModular
+                        prueba={prueba}
+                        deleteTask={deleteTask}
+                        setEditTask={setEditTask}
+                        changelist={changelist}
+                        workDone={workDone}
+                        changelist={changelist}
+                        deleteTask={deleteTask}
+                    />
+                </Route>
+                <Route path='/todolist-usehistory/todolist-task'>
+                    <Task
+                        nombre={nombre}
+                        tarea={tarea}
+                        assignment={assignment}
+                        handleName={handleName}
+                        handleTask={handleTask}
+                    />
+                </Route>
+            </Switch>
         </>
 
     )

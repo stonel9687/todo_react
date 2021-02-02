@@ -9,8 +9,9 @@ const TodoContext = () => {
             <Link to='/'>
                 <button type="button" className="btn " >Volver</button>
             </Link>
-            <Lista />
             <Task />
+            <Lista />
+           
         </>
     )
 }
