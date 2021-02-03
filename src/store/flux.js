@@ -1,20 +1,20 @@
 const getState = ({ getStore, setStore, getActions }) => {
     return {
         store: {
-            nombre: '',
-            tarea: '',
+            name: '',
+            task: '',
             taskList: [],
             setEdit: false,
             currentTask: {},
-            workDone:[]
+            workDone: []
         },
         actions: {
             handleName: (e) => {
-                setStore({ nombre: e.target.value })
+                setStore({ name: e.target.value })
             },
 
             handleTask: (e) => {
-                setStore({ tarea: e.target.value })
+                setStore({ task: e.target.value })
             },
 
             assignment: (e) => {
@@ -26,8 +26,8 @@ const getState = ({ getStore, setStore, getActions }) => {
                         if (item.id === store.currentTask.id) {
                             const newTask = {
                                 id: store.currentTask.id,
-                                name: store.nombre,
-                                task: store.tarea,
+                                name: store.name,
+                                task: store.task,
                                 date: store.currentTask.date
                             }
                             return newTask
@@ -37,8 +37,8 @@ const getState = ({ getStore, setStore, getActions }) => {
                     })
                     setStore({
                         taskList: newTasklist,
-                        nombre: '',
-                        tarea: '',
+                        name: '',
+                        task: '',
                         isEdit: false,
                         currentTask: {}
                     })
@@ -46,34 +46,32 @@ const getState = ({ getStore, setStore, getActions }) => {
                     const store = getStore()
                     const id = new Date().getTime()
                     const fecha = new Date()
-                    console.log(fecha)
                     const newTask = {
                         id: id,
-                        name: store.nombre,
-                        task: store.tarea,
+                        name: store.name,
+                        task: store.task,
                         date: fecha.toString()
                     }
-
                     const todolist = store.taskList.concat(newTask)
                     setStore({
                         taskList: todolist,
-                        nombre: '',
-                        tarea: ''
+                        name: '',
+                        task: ''
                     })
                 }
             },
             deleteTask: (item, isDone) => {
                 const store = getStore()
                 if (isDone === true) {
-                    const borrarTrabajo = store.taskList.filter((tarea) => {
-                        return tarea.id !== item.id
+                    const borrarTrabajo = store.workDone.filter((task) => {
+                        return task.id !== item.id
                     })
                     setStore({
-                        taskList: borrarTrabajo
+                        workDone: borrarTrabajo
                     })
                 } else {
-                    const borrarTarea = store.taskList.filter((tarea) => {
-                        return tarea.id !== item.id
+                    const borrarTarea = store.taskList.filter((task) => {
+                        return task.id !== item.id
                     })
                     setStore({
                         taskList: borrarTarea
@@ -81,30 +79,31 @@ const getState = ({ getStore, setStore, getActions }) => {
                 }
             },
 
-            setEditTask: (task) => {
-                const store = getStore()
+            setEditTask: (item) => {
+                console.log(item)
                 setStore({
-                    nombre: '',
-                    tarea: '',
+                    name: item.name,
+                    task: item.task,
                     setEdit: true,
-                    currentTask: task
+                    currentTask: item
                 })
             },
 
             changelist: (item, isChange) => {
                 const store = getStore()
-                const actions=getActions()
+                const actions = getActions()
+                console.log(item)
                 if (isChange === true) {
-                    actions.deleteTask(item, true)
+                    actions.deleteTask(item, isChange)
                     const returnTask = store.taskList.concat(item)
                     setStore({
-                        taskList:returnTask
+                        taskList: returnTask
                     })
                 } else {
-                    actions.deleteTask(item, false)
+                    actions.deleteTask(item, isChange)
                     const newdone = store.workDone.concat(item)
                     setStore({
-                        workDone:newdone
+                        workDone: newdone
                     })
                 }
             }

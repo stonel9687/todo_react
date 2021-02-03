@@ -9,7 +9,7 @@ const Lista = () => {
             <div className='d-flex container max-container'>
                 <div className="card bg-light mb-3" style={{ width: '18rem' }}>
                     <div className="card-header">Por Hacer</div>
-                    {store.taskList.map((item => {
+                    {store.taskList.map((item) => {
                         return (
                             <>
                                 <div className="card-body">
@@ -33,11 +33,11 @@ const Lista = () => {
                                 </div>
                             </>
                         )
-                    }))}
+                    })}
                 </div>
                 <div className="card bg-light mb-3" style={{ width: '18rem' }}>
                     <div className="card-header">Hecho</div>
-                    {store.workDone.map((item => {
+                    {store.workDone.map((item) => {
                         return (
                             <div className="card-body">
                                 <p className="card-text">
@@ -57,7 +57,7 @@ const Lista = () => {
                                 </p>
                             </div>
                         )
-                    }))}
+                    })}
                 </div>
             </div>
             <Link to='/'>

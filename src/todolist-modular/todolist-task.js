@@ -10,8 +10,8 @@ const Task = () => {
                     <div className='input-add container'>
                         <div>
                             <form onSubmit={actions.assignment}>
-                                <input required type="text" className="form-control " placeholder="Nombre" aria-label="Recipient's username" onChange={actions.handleName} value={store.nombre} />
-                                <input required type="text" className="form-control " placeholder="Tarea" aria-label="Recipient's username" onChange={actions.handleTask} value={store.tarea} />
+                                <input required type="text" className="form-control " placeholder="Nombre" aria-label="Recipient's username" onChange={actions.handleName} value={store.name} />
+                                <input required type="text" className="form-control " placeholder="Tarea" aria-label="Recipient's username" onChange={actions.handleTask} value={store.task} />
                                 <button type='submit' className="btn btn-primary btn-lg btn-block">Agregar</button>
                             </form>
                         </div>
